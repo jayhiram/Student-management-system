@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mark Attendance</title>
+</head>
+<body>
+    <h1>Mark Attendance</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="student">Student:</label>
+        <input type="text" id="student" name="student" required><br><br>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="present">Present</option>
+            <option value="absent">Absent</option>
+        </select><br><br>
+        <button type="submit">Mark Attendance</button>
+    </form>
+</body>
+</html>
+

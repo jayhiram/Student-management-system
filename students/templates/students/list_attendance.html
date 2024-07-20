@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List Attendance</title>
+</head>
+<body>
+    <h1>Attendance Records</h1>
+    <ul>
+        {% for record in attendance_records %}
+        <li>{{ record.student.name }} - {{ record.course.title }} - {{ record.date }} - {{ record.present }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'mark_attendance' %}">Mark New Attendance</a>
+    <a href="{% url 'index' %}">Back to Home</a>
+</body>
+</html>
