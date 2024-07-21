@@ -28,3 +28,13 @@ class Attendance(models.Model):
 
     def __str__(self):
         return f"{self.student.name} - {self.course.title} - {self.date}"
+
+
+
+class Course(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    students = models.ManyToManyField(Student, related_name='courses')
+
+    def __str__(self):
+        return self.title
